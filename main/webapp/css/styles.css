@@ -1,0 +1,808 @@
+@charset "UTF-8";
+body {
+    font-family: 'Georgia', serif; /* セリフ体を使って上品に */
+    background-color: #f4f4f4; /* 少し落ち着いた明るい背景色 */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダーのスタイル */
+	header {
+		background-color: #2A2A2A; /* 深いグレーでシックな雰囲気 */
+		color: white;
+		height: 110px;
+		padding: 0 30px; /* 左右にパディング */
+		display: flex;
+		justify-content: space-between; /* 左と右を分けて配置 */
+		align-items: center; /* 垂直方向で中央揃え */
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 微妙な影をつけて深みを出す */
+	}
+
+	/* ヘッダー内のタイトル h1 */
+	header h1 {
+		margin: 0;
+		font-size: 2em;
+		font-family: 'Times New Roman', serif; /* 高級感を出すために明朝体 */
+	}
+	
+	.userHeader a,
+	.adminHeader a,
+	.loginHeader a {
+			background: none;
+			border: none;
+			text-decoration: none; /* 最初は下線なし */
+            color: white; /* 文字色を白に */
+	}
+        
+/* ナビゲーションのスタイル */
+        nav {
+            display: flex;
+            justify-content: space-around; /* リスト項目を均等に配置 */
+            position: absolute;
+            top: 55px;
+            right: 30px; /* ヘッダーの右側に配置 */
+        }
+
+        nav a,
+        form.nav-form button {
+			font-family: 'Georgia', serif;
+			font-size: 14px;
+			background: none;
+			border: none;
+            text-decoration: none; /* 最初は下線なし */
+            color: white; /* 文字色を白に */
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+
+        /* ホバー時の下線 */
+        nav a:hover,
+        form.nav-form button:hover {
+            border-bottom: 2px solid white; /* ホバー時に白い下線 */
+        }
+
+h2 {
+    font-size: 2.5em;
+    color: #2A2A2A; /* 深みのある色で高級感 */
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+h3 {
+	text-align: center;
+    font-size: 2.5em; /* 商品名を大きく */
+    color: #2A2A2A; /* 深い色合いで高級感を出す */
+    font-family: 'Georgia', serif; /* 高級感のあるセリフ体 */
+    margin-bottom: 15px;
+    letter-spacing: 1px; /* 少し文字間を広げて上品さを演出 */
+}
+
+h4 {
+	text-align: center;
+    font-size: 1.5em; /* 商品名を大きく */
+    color: #2A2A2A; /* 深い色合いで高級感を出す */
+    font-family: 'Georgia', serif; /* 高級感のあるセリフ体 */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 1px; /* 少し文字間を広げて上品さを演出 */
+}
+
+section {
+	width: 80%; /* 幅をブラウザの80%に設定 */
+	margin: 0 auto; /* セクションを中央に配置 */
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 70px;  /* 幅を指定 */
+  	height: 70px;
+    background-color: rgba(179, 141, 93, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000; /* 他の要素より上に表示されるようにする */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #B38D5D;
+}
+
+body.login-body {
+	margin: 0;
+	padding: 0;
+	background-image: url('login_image.jpg');
+	background-size: cover;  /* 画像を画面全体にフィットさせる */
+	background-position: center center;  /* 画像の位置を中央に設定 */
+	background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
+}
+
+.login-container {
+	max-width: 600px;
+	margin: 0px auto;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.0);
+	border-radius: 8px;
+	margin-top: 50px;
+	margin-left: 43%;
+}
+    
+h2.login-h2 {
+    font-size: 2.5em;
+    color: #2A2A2A; /* 深みのある色で高級感 */
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+p.login-p {
+	font-size: 19px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* 画像の最大幅を設定 */
+    height: 300px; /* 高さを設定 */
+    margin: auto;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を枠にフィットさせる */
+    border-radius: 10px; /* 角を丸める場合 */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* 白い半透明のオーバーレイ */
+    border-radius: 10px; /* 角を丸める場合、画像と一致させる */
+    z-index: 1; /* オーバーレイを画像の上に表示 */
+}
+
+
+/* スライダーのコンテナ */
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 400px; /* 高さを設定 */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* 各画像 */
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を収める際にアスペクト比を保持 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 最初に表示する画像 */
+.image-slider img.active {
+    opacity: 1;
+}
+
+.slider-text {
+	width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 2; /* 文字を最前面に */
+    top: 380px;
+    left: 0;
+    color: white;
+    font-size: 1.3em;
+}
+
+/* オーバーレイの背景 */
+.slider-text::before {
+    content: ''; /* 擬似要素を作成 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%; /* 横幅を100% */
+    height: 100%; /* 高さも100% */
+    background: rgba(0, 0, 0, 0.5); /* 半透明の黒オーバーレイ */
+    z-index: -1; /* 文字の後ろに配置 */
+}
+
+/* フォームコンテナ */
+    .form-container {
+        max-width: 600px;
+        margin: 0px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+/* エラーメッセージ、成功メッセージのスタイル */
+    .message {
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    
+    .error-message {
+		text-align: center;
+        background-color: #FFDDC1;
+        color: #D8000C;
+	 	margin-bottom: 20px;
+    }
+
+    .success-message {
+		text-align: center;
+        background-color: #D4EDDA;
+        color: #155724;
+		margin-bottom: 20px;
+    }
+
+    /* フォームのスタイル */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+         margin-bottom: 20px;
+    }
+
+    td {
+        padding: 2px;
+        font-size: 1em;
+    }
+    
+    td input, td select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+      
+    table.info-form td:first-child {
+ 	   	width: 30%;
+	}
+	
+	table.info-form td:nth-child(2) {
+ 		width:70%;
+	}
+
+/* テーブル内の入力項目テキスト */
+    .user-text {
+    font-weight: bold;
+}
+
+table.order,
+table.cart,
+table.rireki,
+table.rireki-info,
+table.admin-ichiran {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table.order th,
+table.cart th,
+table.rireki th,
+table.rireki-info th,
+table.admin-ichiran th {
+	padding: 7px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table.order td,
+table.cart td,
+table.rireki td,
+table.rireki-info td,
+table.admin-ichiran td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table.order th,
+table.cart th,
+table.rireki th,
+table.rireki-info th,
+table.admin-ichiran th {
+    background-color: #B38D5D;
+    color: white;
+}
+
+table.order td,
+table.cart td,
+table.rireki td,
+table.rireki-info td,
+table.admin-ichiran td {
+    background-color: #f9f9f9;
+}
+
+/* 総合計行 */
+table.order tr:last-child td,
+table.cart tr:last-child td,
+table.rireki tr:last-child td,
+table.rireki-info tr:last-child td {
+	padding: 7px;
+    font-weight: bold;
+    background-color: #B38D5D;
+    color: white;
+}
+
+.order-img,
+.cart-img {
+	width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px; /* 角を丸める */
+}
+
+/* order.jspのテーブルスタイル */
+table.order td:nth-child(1) {
+    width: 15%;
+}
+
+table.order td:nth-child(2) {
+    width: 20%;
+}
+
+table.order td:nth-child(3) {
+    width: 25%;
+}
+
+table.order td:nth-child(4) {
+    width: 15%;
+}
+
+table.order td:nth-child(5) {
+    width: 25%;
+}
+
+/* cart.jspのテーブルスタイル */
+table.cart td:nth-child(2) {
+    width: 15%;
+}
+
+table.cart td:nth-child(3) {
+    width: 20%;
+}
+
+table.cart td:nth-child(4) {
+    width: 18%;
+}
+
+table.cart td:nth-child(5) {
+    width: 20%;
+}
+
+table.cart td:nth-child(6) {
+    width: 18%;
+}
+
+table.cart td:nth-child(7) {
+    width: 9%;
+}
+
+/* cart.jspのテーブル内の個数入力のフォーム */
+.small-input {
+    width: 50% !important;
+    padding: 10px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9; /* フォーム背景色を淡いグレーに */
+    }
+
+/* 共通のボタンスタイル */
+.action-button {
+    font-family: 'Georgia', serif;
+	text-decoration: none;
+    font-size: 0.8em; /* 文字サイズを統一 */
+    color: #B38D5D; /* 高級感を感じさせるゴールド系 */
+    padding: 5px 10px; /* パディングを統一 */
+    border-radius: 5px;
+    background-color: #fff; /* 白い背景でシンプルかつ高級感 */
+    border: none; /* ボーダーを消す */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05); /* 微細な影で浮き上がるように */
+    cursor: pointer; /* ポインターカーソルを追加 */
+    display: inline-block; /* ボタンの幅をリンクと同じにする */
+    text-align: center; /* テキストを中央揃え */
+    vertical-align: middle; /* 垂直方向の位置を揃える */
+    line-height: 1.5; /* 高さを統一 */
+}
+
+.action-button:hover {
+    text-decoration: none;
+    background-color: #B38D5D; /* ゴールド系 */
+    color: white;
+}
+
+/* rireki.jspのテーブルスタイル */
+table.rireki td:nth-child(1) {
+    width: 10%;
+}
+
+table.rireki td:nth-child(2) {
+    width: 15%;
+}
+
+table.rireki td:nth-child(3) {
+    width: 15%;
+}
+
+table.rireki td:nth-child(4) {
+    width: 15%;
+}
+
+table.rireki td:nth-child(5) {
+    width: 15%;
+}
+
+table.rireki td:nth-child(6) {
+    width: 10%;
+}
+
+table.rireki td:nth-child(7) {
+    width: 20%;
+}
+
+/* rirekiinfo.jspのテーブルスタイル */
+table.rireki-info td:nth-child(1) {
+    width: 40%;
+}
+
+table.rirekiinfo td:nth-child(2) {
+    width: 20%;
+}
+
+table.rireki-info td:nth-child(3) {
+    width: 40%;
+}
+
+/* admin-ichiran.jspのテーブルスタイル */
+table.admin-ichiran td:nth-child(1) {
+    width: 8%;
+}
+
+table.admin-ichiran td:nth-child(2) {
+    width: 15%;
+}
+
+table.admin-ichiran td:nth-child(3) {
+    width: 30%;
+}
+
+table.admin-ichiran td:nth-child(4) {
+    width: 20%;
+}
+
+table.admin-ichiran td:nth-child(5) {
+    width: 10%;
+}
+
+table.admin-ichiran td:nth-child(6) {
+    width: 7%;
+}
+
+table.admin-ichiran td:nth-child(7) {
+    width: 20%;
+}
+
+/* adminichiran.jspのボタンスタイル */
+.zaikoUpdate {
+    font-family: 'Georgia', serif;
+	text-decoration: none;
+    font-size: 0.8em; /* 文字サイズを統一 */
+    color: #B38D5D; /* 高級感を感じさせるゴールド系 */
+    padding: 5px 10px; /* パディングを統一 */
+    border-radius: 5px;
+    background-color: #fff; /* 白い背景でシンプルかつ高級感 */
+    border: none; /* ボーダーを消す */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05); /* 微細な影で浮き上がるように */
+    cursor: pointer; /* ポインターカーソルを追加 */
+    display: inline-block; /* ボタンの幅をリンクと同じにする */
+    text-align: center; /* テキストを中央揃え */
+    vertical-align: middle; /* 垂直方向の位置を揃える */
+    line-height: 1.5; /* 高さを統一 */
+}
+
+.zaikoUpdate:hover {
+    text-decoration: none;
+    background-color: #B38D5D; /* ゴールド系 */
+    color: white;
+}
+
+
+p {
+	    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+ul li a,
+ul li button {
+	font-family: 'Georgia', serif;
+	text-decoration: none;
+    font-size: 1.0em; /* 文字サイズを統一 */
+    color: #B38D5D; /* 高級感を感じさせるゴールド系 */
+    padding: 10px 30px; /* パディングを統一 */
+    border-radius: 10px;
+    background-color: #fff; /* 白い背景でシンプルかつ高級感 */
+    border: none; /* ボーダーを消す */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* 微細な影で浮き上がるように */
+    cursor: pointer; /* ポインターカーソルを追加 */
+    display: inline-block; /* ボタンの幅をリンクと同じにする */
+    text-align: center; /* テキストを中央揃え */
+    vertical-align: middle; /* 垂直方向の位置を揃える */
+    line-height: 1.5; /* 高さを統一 */
+}
+
+ul li a:hover,
+ul li button:hover {
+	text-decoration: none;
+    background-color: #B38D5D; /* ゴールド系 */
+    color: white;
+    transform: translateY(-5px); /* 上に少し浮かせる */
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.2); /* 強めの影をつけて浮き上がる効果 */
+}
+
+form {
+	display: block;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+select[name="paymentMethod"],
+select[name="payId"] {
+    width: 100%;
+    max-width: 350px; /* 最大幅 */
+    padding: 10px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9; /* フォーム背景色を淡いグレーに */
+}
+
+/* フォーカス時のスタイル */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+select[name="paymentMethod"]:focus,
+select[name="payId"]:focus {
+    border-color: #B38D5D; /* ゴールド系の色 */
+    box-shadow: 0 0 10px rgba(179, 141, 93, 0.3); /* ゴールドのぼかし効果 */
+    outline: none;
+}
+
+input[type="file"] {
+    width: 100%;
+    max-width: 350px; /* 最大幅 */
+}
+
+input[type="submit"] {
+	font-family: 'Georgia', serif;
+    font-size: 1.1em;
+    color: white;
+    background-color: #B38D5D; /* 高級感のあるゴールド */
+    border: none;
+    padding: 10px 35px;
+    border-radius: 5px; /* 丸みを持たせて洗練された印象 */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #8A6B3B; /* ダークゴールドに */
+    transform: translateY(-5px); /* 上に浮かせる */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 15px; /* 角を丸めて柔らかい印象 */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /* 大きめの影で浮き上がり感 */
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    padding: 20px;
+    text-decoration: none; /* リンクの下線を消す */
+    border: 1px solid #ddd; /* 薄いグレーのボーダー */
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* 上に少し浮かせる */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* 大きめの影で浮き上がり感 */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px; /* 角を丸める */
+     transition: transform 0.3s ease; /* ズームと枠の追加を滑らかに */
+}
+
+.product-card:hover img {
+    transform: scale(1.1); /* 画像を少しズーム */
+}
+
+.product-card h3 {
+    margin: 15px 0;
+    font-size: 1.7em;
+    color: #2A2A2A; /* 落ち着いた色で高級感 */
+}
+
+.product-card p {
+    font-size: 1.2em;
+    color: #777;
+}
+
+p.out-of-stock {
+    color: #D9534F; /* 赤色で強調 */
+    font-weight: bold;
+}
+
+.out-of-stock-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px; /* 角を丸める */
+}
+
+/* 在庫切れの場合にグレーアウト */
+.out-of-stock-card {
+    background-color: #f0f0f0;
+    color: #b0b0b0;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.out-of-stock-card:hover {
+    transform: none;
+}
+
+.shohin-detail {
+    font-size: 1.1em; /* 詳細部分は少し小さめ */
+    color: #555; /* 落ち着いた色 */
+    line-height: 1.6; /* 行間を広くして読みやすさをアップ */
+    font-family: 'Georgia', serif;
+    text-align: center;
+}
+
+.detail {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top: 50px;
+
+    /* Flexboxのスタイル */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* 要素間の間隔を広げる */
+    flex-direction: column; /* 縦方向に並べる */
+    gap: 5px; /* 要素間に追加する余白 */
+}
+
+
+.shohindetail-image {
+    width: 100%; /* 親要素の幅に合わせて画像を拡大縮小 */
+    height: 300px; /* 高さを固定して、すべての画像を同じ高さにする */
+    max-width: 400px; /* 最大幅を設定して大きすぎないようにする */
+    margin: 20px auto; /* 上下に余白、左右は中央に配置 */
+    border-radius: 10px; /* 画像の角を丸くする */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 画像に軽い影をつける */
+    display: block; /* 画像をブロック要素にして中央揃え */
+    object-fit: cover; /* アスペクト比を維持しつつ、画像を切り抜いて埋める */
+}
+
+.detail-text {
+	width: 60%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.price {
+    font-size: 2.0em; /* 価格を大きく強調 */
+    color: #B38D5D; /* ゴールド系で高級感を強調 */
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.shohin-detail ul {
+    list-style-type: none; /* リストのスタイルを消す */
+    padding: 0;
+    margin: 0;
+}
+
+.shohin-detail ul li {
+    margin-bottom: 10px; /* 各項目の間隔を少し空ける */
+}
+
+/* costomer.jsp */
+.customer-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    /* Flexboxのスタイル */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* 要素間の間隔を広げる */
+    flex-direction: column; /* 縦方向に並べる */
+    gap: 5px; /* 要素間に追加する余白 */
+}
+
+
+.customer-info p {
+	text-align: center;
+	line-height: 1.6;
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+}
+
+footer {
+	margin-top: 30px;
+    background-color: #2A2A2A; /* 深いグレー */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* 上向きの微細な影 */
+    font-size: 1.1em;
+}
